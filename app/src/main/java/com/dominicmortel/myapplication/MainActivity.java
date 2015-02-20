@@ -29,6 +29,10 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    public void startButton(View view) {
+        Intent intent = new Intent(this, gameScreen.class);
+        startActivity(intent);
+    }
     public void sendMessage(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
 

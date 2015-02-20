@@ -1,0 +1,45 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/textView"
+    android:layout_toEndOf="@+id/textView"
+
+    tools:context="com.dominicmortel.myapplication.gameScreen"
+    android:id="@+id/pic00"
+    android:onClick="pic00click">
+
+    <TextView android:text="@string/tacoPlaceholder" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="296dp"
+        android:id="@+id/imageButton"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:clickable="true"
+        android:src="@drawable/taco0"
+        android:longClickable="false"
+        android:scaleType="fitStart"
+        android:background="#00ffffff" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/pic01"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:src="@drawable/taco1"
+        android:scaleType="fitStart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/pointsCounterView"
+        android:layout_row="17"
+        android:layout_column="0" />
+</GridLayout>
