@@ -1,11 +1,13 @@
 package com.dominicmortel.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
 
 
 public class gameScreen extends ActionBarActivity {
@@ -17,37 +19,47 @@ public class gameScreen extends ActionBarActivity {
     int points10 = 999;
     int points11 = 999;
     int pointsCounter = 0;
-    //declare it up here so it is global (to this class)
-    TextView pointsCounterView = new TextView(this);
+
+    //Declare a global TextView that can be accessed by all local functions
+    TextView test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_game_screen);
+
+        TextView pointsCounterView = new TextView(this);
+
         //hardcode these until we can make a rand()
         points00 = 1;
         points01 = 0;
         points10 = 0;
         points11 = 0;
+
         //this is the points counter text view
         pointsCounterView.setId(R.id.pointsCounterView);
-        pointsCounterView.setText(pointsCounter);
+        pointsCounterView.setText(Integer.toString(pointsCounter));
     }
     //there might be a better way to do this using onClick ids
-    public void pic00click(View view) {
-        pointsCounter += points00;
-        pointsCounterView.setText(pointsCounter);
+   public void pic00click(View view) {
+        test = (TextView)findViewById(R.id.pointsCounterView);
+        pointsCounter += (points00*2);
+        test.setText(Integer.toString(pointsCounter));
     }
     public void pic01click(View view) {
+        test = (TextView)findViewById(R.id.pointsCounterView);
         pointsCounter += points01;
-        pointsCounterView.setText(pointsCounter);
+        test.setText(Integer.toString(pointsCounter));
     }
     public void pic10click(View view) {
+        test = (TextView)findViewById(R.id.pointsCounterView);
         pointsCounter += points10;
-        pointsCounterView.setText(pointsCounter);
+        test.setText(Integer.toString(pointsCounter));
     }
     public void pic11click(View view) {
+        test = (TextView)findViewById(R.id.pointsCounterView);
         pointsCounter += points11;
-        pointsCounterView.setText(pointsCounter);
+        test.setText(Integer.toString(pointsCounter));
     }
 
     @Override
